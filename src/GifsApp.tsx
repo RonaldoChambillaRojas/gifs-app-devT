@@ -7,7 +7,7 @@ export const GifsApp = () => {
   return (
     <>
     <CustomHeader title= "Buscador de Gifs" description="Descubre y comparte el gif" />
-    <SearchBar/>
+    <SearchBar placeholder="Busca lo que quieras" />
     <PreviousSearches/>
 
 
