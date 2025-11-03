@@ -9,7 +9,7 @@ import { SearchBar } from "./shared/components/SearchBar"
 export const GifsApp = () => {
     const [previousTems, setPreviousTerms] = useState(['dragon ball z']);
 
-    const handleTermClicked = ( term: string ) => {
+    const handleTermClicked = ( term: string,) => {
         console.log({term});
     }
 
@@ -26,7 +26,7 @@ export const GifsApp = () => {
     onQuery={ handleSearch }
     />
 
-    <PreviousSearches searches={previousTems} onLabelClick={handleTermClicked} />
+    <PreviousSearches searches={previousTems} onLabelClick={(term: string) => handleTermClicked(term)} />
 
     <GifList gifs={mockGifs}/>
     </>

@@ -8,7 +8,7 @@ interface Props {
 
 export const GifList: FC<Props> = ({gifs}) => {
   return (
-        <div className="gifs-continer">
+        <div className="gifs-container">
         {
             gifs.map(gif => (
                 <div key={gif.id} className="gif-card">
