@@ -14,7 +14,7 @@ export const GifsApp = () => {
     }
 
     const handleSearch = (query: string) => {
-      console.log(query);
+      console.log({query});
     }
 
   return (
