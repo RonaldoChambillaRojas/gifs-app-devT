@@ -4,6 +4,7 @@ import { PreviousSearches } from "./gifs/components/PreviousSearches"
 import { mockGifs } from "./mock-data/gifs.mock"
 import { CustomHeader } from "./shared/components/CustomHeader"
 import { SearchBar } from "./shared/components/SearchBar"
+import { getGifsByQuery } from "./gifs/actions/get-gifs-by-query.action"
 
 
 export const GifsApp = () => {
@@ -13,7 +14,7 @@ export const GifsApp = () => {
         console.log({term});
     }
 
-    const handleSearch = (query: string): void => {
+    const handleSearch = async(query: string) => {
 
       const queryCustom = query.toLowerCase().trim();
       if( queryCustom.length > 0 && !previousTems.includes(queryCustom) && previousTems.length < 8){
@@ -21,7 +22,13 @@ export const GifsApp = () => {
           queryCustom,
           ...previousTems
         ])
+      }else{
+        return;
       }
+
+      const gifs = await getGifsByQuery(queryCustom)
+
+      console.log({gifs});
 
     }
 
