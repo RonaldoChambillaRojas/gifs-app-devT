@@ -13,8 +13,16 @@ export const GifsApp = () => {
         console.log({term});
     }
 
-    const handleSearch = (query: string) => {
-      console.log(query);
+    const handleSearch = (query: string): void => {
+
+      const queryCustom = query.toLowerCase().trim();
+      if( queryCustom.length > 0 && !previousTems.includes(queryCustom) && previousTems.length < 8){
+        setPreviousTerms([
+          queryCustom,
+          ...previousTems
+        ])
+      }
+
     }
 
   return (
