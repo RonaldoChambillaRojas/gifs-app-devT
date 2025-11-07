@@ -19,10 +19,10 @@ export const SearchBar = ({placeholder = "Buscar", onQuery}: Props) => {
     // onQuery(query);
 
     return() => {
-      clearTimeout(timeoutId); //? Esto se disapara cuando el componente se desmonta y cuando el useEffect se vulve a ejecutar?
+      clearTimeout(timeoutId); //? Esto se disapara cuando el componente se desmonta y cuando el useEffect se vulve a ejecutar. Explicame mejor esto.
     }
 
-  },[query, onQuery]); //? Aqui le pasamos el onQuery porque React dise que este puede cambiar, en que momento puede una funcion cambiar, dame alguno ejemplos
+  },[query, onQuery]); //? Aqui le pasamos el onQuery porque React dise que este puede cambiar, en que momento puede una funcion cambiar?, lo entenderia de un estado, pero cuando pasamos una funcion que significa?.
 
 
   const handleSearch = () => {
