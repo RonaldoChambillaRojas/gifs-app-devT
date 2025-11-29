@@ -5,7 +5,7 @@ import type { Gif } from "../intearfaces/gif.interface";
 
 export const getGifsByQuery = async(query: string): Promise<Gif[]> => {
 
-    const response = await axios.get<GiphyResponse>('https://api.giphy.com/v1/gifs/search',{
+    const response = await axios.get<GiphyResponse>('/search',{
         params: {
             q: query,
             limit: 10,
